@@ -44,7 +44,7 @@ public class ProductController {
         return product;
     }
 
-    @GetMapping(path = { "/products", "/" })
+    @GetMapping(path = { "/products"})
     public String saludar(Model model) {
         model.addAttribute("products", getProducts());
         return "index";
