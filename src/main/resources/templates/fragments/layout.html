@@ -1,0 +1,136 @@
+<!doctype html>
+<html th:fragment="layout (template, menu)">
+
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+  <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min-jsf.css}" />
+  <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap-jsf.css}" />
+  <link th:rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css} " />
+  <link th:rel="stylesheet" th:href="@{/webjars/bootstrap-datepicker/css/bootstrap-datepicker.css}" />
+  <link th:rel="stylesheet" th:href="@{/webjars/bootstrap-datepicker/css/bootstrap-datepicker.standalone.css}" />
+  <link th:href="@{/css/bootstrap.css}" rel="stylesheet" href="../static/css/bootstrap.css">
+  <script th:src="@{/js/jquery.js}" src="../static/js/jquery.js"></script>
+  <script th:src="@{/js/bootstrap.js}" src="../static/js/bootstrap.js"></script>
+
+  <title>PetClinic :: a Spring Framework demonstration</title>
+  <style type="text/css" media="screen">
+    A:link {text-decoration: none; margin-left: 2px; margin-right: 2px;}
+    A:visited {color: white;  font-family: arial; text-decoration: none }
+    A:hover { color: white; font-family: arial; text-decoration: none }
+
+    .margin{
+      margin-top: 7px;
+      color:orange;
+    }
+    </style>
+
+</head>
+<body>
+  
+
+  <nav class="navbar navbar-expand-lg navbar navbar-dark" style="background-color: #00AB23;">
+    <div class="container-fluid">
+      <a  class="navbar-brand white" href="#">Spring Boot</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" id="navbarNavAltMarkup">
+        <div class="navbar-nav flex-grow-1">
+          <a th:replace="::menuItem ('/','home','active','home','Inicio')" class="nav-link active" aria-current="page">Home</a>
+          <a th:replace="::menuItem ('/user/login','','Login User','login','Login')" class="nav-link active" >Login</a>
+          <a th:replace="::menuItem ('/contact/create','','Create Contact','contact','Agregar Nuevo cliente')" class=" nav-link active">Agregar nuevo cliente</a>
+          <a th:replace="::menuItem ('/contact/listar','','List Contact','contact','Lista de clientes')" class=" nav-link active">Lista de clientes</a>
+        </div>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+    
+
+    
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" th:href="@{/}"><span></span></a>
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+            <span class="sr-only">
+              <os-p>Toggle navigation</os-p>
+            </span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="main-navbar">
+
+          <ul class="nav navbar-nav navbar-right" th:remove="all">
+
+            <li th:fragment="menuItem (link,active,title,glyph,text)" class="active"
+              th:class="${active==menu ? 'active' : ''}">
+              <a th:href="@{__${link}__}" th:title="${title}">
+                <span th:class="'glyphicon  glyphicon-'+${glyph}" class="glyphicon glyphicon-home"
+                  aria-hidden="true"></span>
+                <span th:text="${text}">Template</span>
+              </a>
+            </li>
+
+          </ul>
+          <!--
+          <ul class="nav navbar-nav navbar-right">
+
+            <li th:replace="::menuItem ('/','home','active','home','Home')">
+              <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+              <span>Home</span>
+            </li>
+
+            <li th:replace="::menuItem ('/user/login','','Login User','login','Login')">
+              <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+              <span>Login</span>
+            </li>
+
+            <li th:replace="::menuItem ('/contact/create','','Create Contact','contact','Contact')">
+              <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+              <span>Login</span>
+            </li>            
+            -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+   
+    <div class="container-fluid">
+      <div class="container xd-container">
+
+        <th:block th:include="${template}" />
+
+        <br />
+        <br />
+        <div class="container">
+          <div class="row">
+            <div class="col-12 text-center">
+              Copyright
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap-datepicker/js/bootstrap-datepicker.min.js}"></script>
+    <script th:src="@{/webjars/jquery.inputmask/jquery.inputmask.min.js}"></script>    
+
+  </body>
+
+  </html>
