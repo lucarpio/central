@@ -1,9 +1,9 @@
-package com.deploy.deploy.repository;
+package edu.programacion.central.repository;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.deploy.deploy.domain.Persona;
+import edu.programacion.central.domain.Persona;
 
 public interface IPersonaRepo extends JpaRepository<Persona, Integer>{
     
