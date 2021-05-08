@@ -3,13 +3,120 @@
 <html xmlns:th="https://www.thymeleaf.org" 
     th:replace="~{fragments/layout :: layout (~{::body},'home')}">
 
-<body>
-    <h2 th:text="#{welcome}">Welcome</h2>
-    <div class="row">
-        <div class="col-md-12">
-          <img class="img-responsive" src="../resources/static/img/pets.png" th:src="@{/img/pets.png}"/>
+    <body>
+
+        <h1>Hola mundo</h1>
+    
+        <div class="album py-3 bg-light">
+            <div class="container">
+    
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    <div class="col">
+                        <div class="card shadow-sm">
+    
+                            <div class="card-body">
+                                <h3 class="card-text">Razer teclado Ornata v2</h3>
+                                <img th:src="${/img/poloQuick001}" width="400px" height="400px" class="img-thumbnail">
+                                <div class="d-flex justify-content-between align-items-center pt-2 pb-2">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-success">Ver más</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h3 class="card-text">Mouse Microsoft</h3>
+                                <img th:src="${/img/poloQuick001}" width="400px" height="400px" class="img-thumbnail">
+                                <div class="d-flex justify-content-between align-items-center pt-2 pb-2">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-success">Ver más</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h3 class="card-text">Asus Laptop Vivobook</h3>
+                                <img th:src="${/img/laptop002}" src="img/laptop002.jpeg" width="400px" height="400px" class="img-thumbnail">
+                                <div class="d-flex justify-content-between align-items-center pt-2 pb-2">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-success">Ver
+                                            más</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</body>
+    
+        <div class="album py-3 bg-light">
+            <div class="container">
+    
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    <div class="col">
+                        <div class="card shadow-sm">
+    
+                            <div class="card-body">
+                                <h3 class="card-text">Quiksilver Polo</h3>
+                                <img th:src="${/img/poloQuick001}" src="img/poloQuick001.png" width="400px" height="400px" class="img-thumbnail">
+                                <div class="d-flex justify-content-between align-items-center pt-2 pb-2">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-success">Ver más</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h3 class="card-text">Fox Polo</h3>
+                                <img th:src="${/img/poloFox001}" src="img/poloFox001.png" width="400px" height="400px" class="img-thumbnail">
+                                <div class="d-flex justify-content-between align-items-center pt-2 pb-2">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-success">Ver más</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h3 class="card-text">Dunkelvolk Polo</h3>
+                                <img th:src="${/img/poloDunkelvolk001}" src="img/poloDunkelvolk001.png" width="400px" height="400px" class="img-thumbnail">
+                                <div class="d-flex justify-content-between align-items-center pt-2 pb-2">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-success">Ver más</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <footer>
+            <div class="footer pt-3 pb-3">
+                <p>Copyright &copy; 2021 - Todos los derechos reservados Central.com</p>
+            </div>
+        </footer>
+    
+        <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+            crossorigin="anonymous"></script>
+    </body>
 
 </html> 
