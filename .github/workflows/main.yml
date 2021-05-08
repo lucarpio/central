@@ -19,7 +19,7 @@ jobs:
       with:
         java-version: 1.8
     
-    -name: Limpiar
+    - name: Limpiar
       run: mvn clean
     
     - name: Build with Maven Backend
