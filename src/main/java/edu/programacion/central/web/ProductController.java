@@ -50,6 +50,39 @@ public class ProductController {
         return "index";
     }
     
+    @GetMapping(path = {"/poloQuick001"})
+    public String mostrar1(Model model){
+        return "poloQuick001";
+    }
+
+    @GetMapping(path = {"/poloFox001"})
+    public String mostrar2(Model model){
+        return "poloFox001";
+    }
+
+    @GetMapping(path = {"/poloDunkelvok001"})
+    public String mostrar3(Model model){
+        return "poloDunkelvok001";
+    }
+
+    @GetMapping(path = {"/teclado"})
+    public String mostrar4(Model model){
+        return "teclado";
+    }
+
+    @GetMapping(path = {"/laptop002"})
+    public String mostrar5(Model model){
+        return "laptop001";
+    }
+
+    @GetMapping(path = {"/mouse001"})
+    public String mostrar6(Model model){
+        return "mouse001";
+    }
+
+    
+
+
     // @GetMapping(path= {"/public"}) public ModelAndView post(){ ModelAndView
     // modelAndView = new ModelAndView(Pagina.HOME); modelAndView.addObject("posts",
     // getPosts()); return modelAndView; }
