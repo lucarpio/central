@@ -1,4 +1,4 @@
-package com.deploy.deploy.domain;
+package edu.programacion.central.domain;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
