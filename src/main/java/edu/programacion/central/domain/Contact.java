@@ -18,8 +18,8 @@ import lombok.*;
 public class Contact {
 
     @Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     private String name;
     private String email;
@@ -55,6 +55,7 @@ public class Contact {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
     private String phone;
 
 }
