@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">  
+    <title>Polo</title>
+</head>
+<body>
+    <style>
+        .navbar-light .navbar-nav .nav-link {
+        color: white;
+        }
+
+
+        .footer {
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          background-color: #0d0d0d;
+          color: white;
+          text-align: center;
+        }
+     
+
+        </style>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-success">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#" style="color: white"> Tienda</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <form class="container-fluid">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Buscar Producto" aria-label="" aria-describedby="basic-addon1">
+                  <span class="input-group-text" id="basic-addon1"><i class="bi bi-search"></i></span>
+                </div>
+              </form>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Iniciar Sesión</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Devoluciones y pedidos</a>
+              </li>
+              
+              <li class="nav-item">
+                  
+                <a class="nav-link" href="#"><span><i class="bi bi-cart" width="16" height="16"></i></span>
+                    Carrito de compras </a>
+                
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+
+      <div class="row mt-5">
+        <div class="col-4">
+        <img src="img/poloFox001.png" alt="" width="400px" height="450px">
+        </div>
+
+        <div class="col-4">
+          <h2>FOX POLO MANGA CORTA LEGACY MOTH</h2>
+          <br>
+          <h5>Descripción:</h5>
+          <br>
+          <p>Este polo cuenta con un diseño casual y versátil; se convertirá en tu perfecto aliado por su practicidad y ligereza.</p>
+        <br>
+        <h5>Precio: S/ 69.00</h5>
+        </div>
+
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header text-center">
+                  Detalle
+                </div>
+                <div class="card-body">
+                  <h5>Precio: S/ 69.00</h5>
+                  Disponibilidad: 5
+                  <div class="form-group mt-3">
+                  <p class="card-text">Cantidad</p>
+                  <input class="form-control form-control-sm"  type="number">
+                </div>
+
+                  <br>
+                  <center><a href="#" class="btn btn-primary mt-4">Añadir al carrito de compras</a></center>
+                </div>
+              </div>
+        </div>
+    </div>
+
+
+    <div class="album py-3 bg-light">
+        <div class="container">
+            <h3>Otros Productos:</h3>
+            <br>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <div class="col">
+                    <div class="card shadow-sm">
+
+                        <div class="card-body">
+                            <h3 class="card-text">Razer teclado Ornata v2</h3>
+                            <img src="img/teclaro001.png" width="400px" height="400px" class="img-thumbnail">
+                            <div class="d-flex justify-content-between align-items-center pt-2 pb-2">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-success">Ver más</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-text">Mouse Microsoft</h3>
+                            <img src="img/mouse001.png" width="400px" height="400px" class="img-thumbnail">
+                            <div class="d-flex justify-content-between align-items-center pt-2 pb-2">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-success">Ver más</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-text">Asus Laptop Vivobook</h3>
+                            <img src="img/laptop002.jpeg" width="400px" height="400px" class="img-thumbnail">
+                            <div class="d-flex justify-content-between align-items-center pt-2 pb-2">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-success">Ver
+                                        más</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer pt-3 pb-3 ">
+           <p>Copyright &copy; 2021 - Todos los derechos reservados Central.com</p>
+        </div>
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+</body>
+</html>
