@@ -8,6 +8,7 @@ public class CentralApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CentralApplication.class, args);
+		System.out.println("Este proyecto se está ejecutando");
 	}
 
 }

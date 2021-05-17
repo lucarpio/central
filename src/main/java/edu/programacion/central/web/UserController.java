@@ -1,20 +1,20 @@
 package edu.programacion.central.web;
 
-import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+//import org.springframework.web.bind.annotation.RequestParam;
 
 
 
 import org.springframework.ui.Model;
 
-import edu.programacion.central.domain.Persona;
+//import edu.programacion.central.domain.Persona;
 import edu.programacion.central.repository.UserRepository;
 import java.util.Optional;
 import edu.programacion.central.domain.User;
-import edu.programacion.central.repository.IPersonaRepo;
+//import edu.programacion.central.repository.IPersonaRepo;
 import javax.validation.Valid;
 import org.springframework.validation.BindingResult;
 
@@ -32,8 +32,8 @@ public class UserController {
         this.userData = userData;
     }
 
-    @Autowired
-    private IPersonaRepo repo;
+   
+    //private IPersonaRepo repo;
 
     @GetMapping("/user/login")
     public String index(Model model) {

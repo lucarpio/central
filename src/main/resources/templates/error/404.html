@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="fragments/layout :: head"></head>
+
+
+<body>
+    <nav th:replace="fragments/layout :: nav"></nav>
+    
+    <div class="container text-center py-3">
+        <div class="panel bg-light">
+            <div class="panel-heading">
+                <h3 class="panel-tittle text-danger">
+                    <span th:text="${error}"></span>- <span th:text="${status}"></span>
+                </h3>
+            </div>
+            <div class="panel-body">
+                <img th:src="@{/img/kirbymolesto1.jpg}" width="500" height="auto" alt="">
+                <br>
+                <h4>La página a la que quieres acceder no exite!</h4>
+                <br>
+                <button class="btn btn-success" onclick="goBack()"> Regresar</button>
+            </div>
+        </div>
+    </div>
+
+    <footer th:replace="fragments/layout :: footer"></footer>
+
+    <script>
+        function goBack(){
+            window.history.back();
+        }
+    </script>
+
+</body>
+
+</html>
