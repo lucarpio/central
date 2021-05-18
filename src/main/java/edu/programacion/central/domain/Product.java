@@ -5,11 +5,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+// import javax.persistence.Temporal;
+// import javax.persistence.TemporalType;
 
-import java.math.BigDecimal;
-import java.util.Date;
+
+// import java.math.BigDecimal;
+// import java.util.Date;
 
 
 
@@ -18,6 +19,8 @@ import java.util.Date;
 @Table(name = "t_product")
 public class Product {
     
+    
+
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
@@ -65,4 +68,6 @@ public class Product {
     public void setDescripción(String descripción) {
         this.descripción = descripción;
     }
+
+    
 }

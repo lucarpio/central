@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="fragments/layout :: head">
+
+</head>
+
+
+<body>
+    <nav th:replace="fragments/layout :: nav"></nav>
+    <br>
+    <div class="container">
+
+        <div class="card bg-light" style="width: 50%">
+            <div class="card-header bg-dark text-white" th:text="${titulo}"></div>
+            <div class="card-body">
+
+
+                <form th:action="@{/producto/save}" th:object="${producto}" method="POST" enctype="multipart/form-data">
+                    <div class="form-group row">
+                        <input type="hidden" th:field="*{id}">
+                        <label class="col-md-2" for="nombre">Nombre</label>
+                        <input type="text" th:field="*{nombre}" class="form-control form-control-sm col-md-6"
+                            id="nombre" placeholder="Ingrese el nombre del nuevo producto">
+                        <small class="form-text text-danger" th:if="${#fields.hasErrors('nombre')}"
+                            th:errors="*{nombre}">
+                        </small>
+
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2" for="descripcion">Descripción</label>
+                        <input type="text" th:field="*{descripcion}" class="form-control form-control-sm col-md-6"
+                            id="descripcion" placeholder="Ingrese una descripción para este producto">
+                        <small class="form-text text-danger" th:if="${#fields.hasErrors('descripcion')}"
+                            th:errors="*{descripcion}">
+                        </small>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2" for="precio">Precio</label>
+                        <input type="text" th:field="*{precio}" class="form-control form-control-sm col-md-6"
+                            id="precio" placeholder="Precio del producto">
+                        <small class="form-text text-danger" th:if="${#fields.hasErrors('precio')}"
+                            th:errors="*{precio}">
+                        </small>
+
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2" for="imagen">Imagen</label>
+                        <input type="file" name="file" class="form-control form-control-sm col-md-6" id="imagen">
+                    </div>
+                    <br>
+                    <div class="card-footer bg-dark">
+                        <input type="submit" class="btn btn-primary btn-sm" value="Guardar" />
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <footer th:replace="fragments/layout :: footer"></footer>
+</body>
+
+</html>

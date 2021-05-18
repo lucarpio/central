@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 
-<html xmlns:th="https://www.thymeleaf.org" 
-    th:replace="~{fragments/layout :: layout (~{::body},'home')}">
-
+<html xmlns:th="https://www.thymeleaf.org">
+    <head th:replace="fragments/layout :: head"></head>
+    <nav th:replace="fragments/layout :: nav"></nav>
     <body>
-
         <h1>Hola mundo</h1>
     
         <div class="album py-3 bg-light">
@@ -110,11 +109,7 @@
             </div>
         </div>
     
-        <footer>
-            <div class="footer pt-3 pb-3">
-                <p>Copyright &copy; 2021 - Todos los derechos reservados Central.com</p>
-            </div>
-        </footer>
+        <footer th:replace="fragments/layout :: footer"></footer>
     
         <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"

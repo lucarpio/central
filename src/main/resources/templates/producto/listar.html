@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="fragments/layout :: head"></head>
+
+
+<body>
+    <nav th:replace="fragments/layout :: nav"></nav>
+    <div class="container">
+        <h1 th:text="${titulo}"></h1>
+    </div>
+    
+    <div class="container">
+        <a class="btn btn-primary btn-sm" th:href="@{/producto/create}"
+            th:text="'Nuevo Producto'" title="Ingresar producto">
+        </a>
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Imagen</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Elminar</th>
+                    <th scope="col">Detalles del producto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="producto:${productos}">
+                    <td th:text="${producto.id}"></td>
+                    <td th:text="${producto.nombre}"></td>
+                    <td th:text="${producto.descripcion}"></td>
+                    <td th:text="${producto.precio}"></td>
+                    <td th:text="${producto.imagen}"></td>
+                    <td>
+                        <a class="btn btn-success btn-sm" th:href="@{/producto/edit/} + ${producto.id}"
+                        th:text="'Editar'" title="Editar producto"></a>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger btn-sm" th:href="@{/producto/delete/} + ${producto.id}"
+                        th:text="'Eliminar'" title="Eliminar producto" 
+                        onclick="return confirm('Está seguro de eliminar el producto?');"></a>
+                    </td>
+                    <td>
+                        <a class="btn btn-info btn-sm" th:href="@{/producto/detalle/} + ${producto.id}"
+                        th:text="'Detalle'" title="Editar producto"></a>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <footer th:replace="fragments/layout :: footer"></footer>
+</body>
+
+</html>
