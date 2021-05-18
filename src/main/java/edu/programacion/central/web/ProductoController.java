@@ -37,7 +37,7 @@ public class ProductoController {
         return "/producto/listar";
     }
 
-    @GetMapping("/create")
+    @GetMapping("/crear")
     public String crear(Model model){
 
         Producto producto = new Producto();
