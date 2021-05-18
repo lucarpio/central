@@ -48,8 +48,10 @@ public class ProductoController {
     }
 
     @PostMapping("/save")
-    public String guardar(@Valid @ModelAttribute Producto producto, BindingResult result, Model model,
-        @RequestParam("file") MultipartFile imagen){
+    public String guardar(@Valid @ModelAttribute Producto producto, BindingResult result, Model model){
+
+        /*
+        @RequestParam("file") MultipartFile imagen    
         if(result.hasErrors()){
             model.addAttribute("titulo", "Ingrese Nuevo Producto");
             model.addAttribute("producto", producto);
@@ -69,6 +71,7 @@ public class ProductoController {
                 e.printStackTrace();
             }
         }
+        */
         productoService.guardar(producto);
         System.out.println("Producto registrado con exito");
         return "redirect:/producto/listar";
