@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import edu.programacion.central.domain.Producto;
+import edu.programacion.central.repository.ProductoRepository;
 import edu.programacion.central.service.ProductoService;
 
 @Controller
@@ -27,13 +28,14 @@ import edu.programacion.central.service.ProductoService;
 public class ProductoController {
     
     @Autowired
-    private ProductoService productoService;
+    private ProductoRepository productoRepository;
+    //private ProductoService productoService;
 
     @GetMapping("/listar")
     public String listarClientes(Model model){
-        List<Producto> listadoProductos = productoService.listarTodos();
+        //List<Producto> listadoProductos = productoService.listarTodos();
         model.addAttribute("titulo", "Lista de produtos");
-        model.addAttribute("productos", listadoProductos);
+        model.addAttribute("productos", productoRepository.findAll());
         return "/producto/listar";
     }
 
@@ -48,10 +50,9 @@ public class ProductoController {
     }
 
     @PostMapping("/save")
-    public String guardar(@Valid @ModelAttribute Producto producto, BindingResult result, Model model){
-
-        /*
-        @RequestParam("file") MultipartFile imagen    
+    public String guardar(@Valid @ModelAttribute Producto producto, BindingResult result, Model model,
+        @RequestParam("file") MultipartFile imagen){
+            
         if(result.hasErrors()){
             model.addAttribute("titulo", "Ingrese Nuevo Producto");
             model.addAttribute("producto", producto);
@@ -71,19 +72,21 @@ public class ProductoController {
                 e.printStackTrace();
             }
         }
-        */
-        productoService.guardar(producto);
+        
+        //productoService.guardar(producto);
+        productoRepository.save(producto);
         System.out.println("Producto registrado con exito");
         return "redirect:/producto/listar";
     }
 
-
+/*
     @GetMapping("/edit/{id}")
     public String editar(@PathVariable("id") Long idProducto, Model model){
 
         Producto producto = null;
         if(idProducto > 0){
-            producto = productoService.buscarPorId(idProducto);
+            producto = productoRepository.findById(idProducto);
+            //producto = productoService.buscarPorId(idProducto);
             if(producto == null){
                 return "redirect:/producto/listar";    
             }
@@ -116,15 +119,16 @@ public class ProductoController {
 
         return "/producto/detalleProducto";
     }
+*/
 
-
-
+/*
     @GetMapping("/delete/{id}")
     public String eliminar(@PathVariable("id") Long idProducto){
 
         Producto producto = null;
         if(idProducto > 0){
-            producto = productoService.buscarPorId(idProducto);
+            producto = productoRepository.findById(id)
+            //producto = productoService.buscarPorId(idProducto);
             if(producto == null){
                 return "redirect:/producto/listar";    
             }
@@ -132,10 +136,12 @@ public class ProductoController {
             return "redirect:/producto/listar";
         }
 
-        productoService.eliminar(idProducto);
+        //productoService.eliminar(idProducto);
+        productoRepository.deleteById(idProducto);;
         System.out.println("Registro eliminado con exito");
 
         return "redirect:/producto/listar";
     }
+    */
 }
 

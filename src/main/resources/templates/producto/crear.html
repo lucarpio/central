@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<html xmlns:th="https://www.thymeleaf.org">
 
 <head th:replace="fragments/layout :: head">
 
@@ -16,7 +16,8 @@
             <div class="card-body">
 
 
-                <form th:action="@{/producto/save}" th:object="${producto}" method="POST" enctype="multipart/form-data">
+                <!-- <form th:action="@{/producto/save}" th:object="${producto}" method="POST" enctype="multipart/form-data"> -->
+                <form th:action="@{/producto/save}" th:object="${producto}" method="POST">
                     <div class="form-group row">
                         <input type="hidden" th:field="*{id}">
                         <label class="col-md-2" for="nombre">Nombre</label>
