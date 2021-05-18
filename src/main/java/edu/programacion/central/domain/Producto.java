@@ -25,7 +25,7 @@ public class Producto implements Serializable{
     private String descripcion;
     @NotNull
     private Double precio;
-   
+    
     private String imagen;
 
 
