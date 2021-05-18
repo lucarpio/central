@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org">
 
-<head th:replace="fragments/layout :: head">
+<!-- <head th:replace="fragments/layout :: head">
+
+</head> -->
+<head>
 
 </head>
 
 
 <body>
+    <!-- 
     <nav th:replace="fragments/layout :: nav"></nav>
     <br>
     <div class="container">
@@ -16,7 +20,7 @@
             <div class="card-body">
 
 
-                <!-- <form th:action="@{/producto/save}" th:object="${producto}" method="POST" enctype="multipart/form-data"> -->
+                <form th:action="@{/producto/save}" th:object="${producto}" method="POST" enctype="multipart/form-data"> 
                 <form th:action="@{/producto/save}" th:object="${producto}" method="POST">
                     <div class="form-group row">
                         <input type="hidden" th:field="*{id}">
@@ -63,6 +67,10 @@
     </div>
 
     <footer th:replace="fragments/layout :: footer"></footer>
+    -->
+    <div>
+        <a class="btn btn-primary">Esto es una prueba</a>
+    </div>
 </body>
 
 </html>
