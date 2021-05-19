@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -23,13 +22,12 @@ import edu.programacion.central.domain.Producto;
 import edu.programacion.central.service.ProductoService;
 
 @Controller
-@RequestMapping("/producto")
 public class ProductoController {
     
     @Autowired
     private ProductoService productoService;
 
-    @GetMapping("/listar")
+    @GetMapping("/producto/listar")
     public String listarClientes(Model model){
         List<Producto> listadoProductos = productoService.listarTodos();
         model.addAttribute("titulo", "Lista de produtos");
@@ -37,7 +35,7 @@ public class ProductoController {
         return "/producto/listar";
     }
 
-    @GetMapping("/create")
+    @GetMapping("/producto/create")
     public String crear(Model model){
 
         Producto producto = new Producto();
@@ -47,7 +45,7 @@ public class ProductoController {
         return "/producto/crear";
     }
 
-    @PostMapping("/save")
+    @PostMapping("/producto/save")
     public String guardar(@Valid @ModelAttribute Producto producto, BindingResult result, Model model,
         @RequestParam("file") MultipartFile imagen){
         if(result.hasErrors()){
@@ -95,7 +93,7 @@ public class ProductoController {
     }
 
 
-    @GetMapping("/detalle/{id}")
+    @GetMapping("/producto/detalle/{id}")
     public String detalleProducto(@PathVariable("id") Long idProducto, Model model){
 
         Producto producto = null;
@@ -135,4 +133,3 @@ public class ProductoController {
         return "redirect:/producto/listar";
     }
 }
-
