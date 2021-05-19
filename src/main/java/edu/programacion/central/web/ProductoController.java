@@ -69,21 +69,21 @@ public class ProductoController {
         }
         productoService.guardar(producto);
         System.out.println("Producto registrado con exito");
-        return "redirect:producto/listar";
+        return "redirect:/producto/listar";
     }
 
 
-    @GetMapping("/edit/{id}")
+    @GetMapping("/producto/edit/{id}")
     public String editar(@PathVariable("id") Long idProducto, Model model){
 
         Producto producto = null;
         if(idProducto > 0){
             producto = productoService.buscarPorId(idProducto);
             if(producto == null){
-                return "redirect:producto/listar";    
+                return "redirect:/producto/listar";    
             }
         }else{
-            return "redirect:producto/listar";
+            return "redirect:/producto/listar";
         }
         
         model.addAttribute("titulo", "Editar Producto");
@@ -100,10 +100,10 @@ public class ProductoController {
         if(idProducto > 0){
             producto = productoService.buscarPorId(idProducto);
             if(producto == null){
-                return "redirect:producto/listar";    
+                return "redirect:/producto/listar";    
             }
         }else{
-            return "redirect:producto/listar";
+            return "redirect:/producto/listar";
         }
         
         model.addAttribute("titulo", "Detalle del producto: "+ producto.getNombre());
@@ -114,22 +114,22 @@ public class ProductoController {
 
 
 
-    @GetMapping("/delete/{id}")
+    @GetMapping("/producto/delete/{id}")
     public String eliminar(@PathVariable("id") Long idProducto){
 
         Producto producto = null;
         if(idProducto > 0){
             producto = productoService.buscarPorId(idProducto);
             if(producto == null){
-                return "redirect:producto/listar";    
+                return "redirect:/producto/listar";    
             }
         }else{
-            return "redirect:producto/listar";
+            return "redirect:/producto/listar";
         }
 
         productoService.eliminar(idProducto);
         System.out.println("Registro eliminado con exito");
 
-        return "redirect:producto/listar";
+        return "producto/listar";
     }
 }
