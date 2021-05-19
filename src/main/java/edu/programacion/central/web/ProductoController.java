@@ -32,7 +32,7 @@ public class ProductoController {
         List<Producto> listadoProductos = productoService.listarTodos();
         model.addAttribute("titulo", "Lista de produtos");
         model.addAttribute("productos", listadoProductos);
-        return "/producto/listar";
+        return "producto/listar";
     }
 
     @GetMapping("/producto/create")
@@ -42,7 +42,7 @@ public class ProductoController {
         model.addAttribute("titulo", "Ingrese Nuevo Producto");
         model.addAttribute("producto", producto);
 
-        return "/producto/crear";
+        return "producto/crear";
     }
 
     @PostMapping("/producto/save")
@@ -69,7 +69,7 @@ public class ProductoController {
         }
         productoService.guardar(producto);
         System.out.println("Producto registrado con exito");
-        return "redirect:/producto/listar";
+        return "redirect:producto/listar";
     }
 
 
@@ -80,16 +80,16 @@ public class ProductoController {
         if(idProducto > 0){
             producto = productoService.buscarPorId(idProducto);
             if(producto == null){
-                return "redirect:/producto/listar";    
+                return "redirect:producto/listar";    
             }
         }else{
-            return "redirect:/producto/listar";
+            return "redirect:producto/listar";
         }
         
         model.addAttribute("titulo", "Editar Producto");
         model.addAttribute("producto", producto);
 
-        return "/producto/crear";
+        return "producto/crear";
     }
 
 
@@ -100,16 +100,16 @@ public class ProductoController {
         if(idProducto > 0){
             producto = productoService.buscarPorId(idProducto);
             if(producto == null){
-                return "redirect:/producto/listar";    
+                return "redirect:producto/listar";    
             }
         }else{
-            return "redirect:/producto/listar";
+            return "redirect:producto/listar";
         }
         
         model.addAttribute("titulo", "Detalle del producto: "+ producto.getNombre());
         model.addAttribute("producto", producto);
 
-        return "/producto/detalleProducto";
+        return "producto/detalleProducto";
     }
 
 
@@ -121,15 +121,15 @@ public class ProductoController {
         if(idProducto > 0){
             producto = productoService.buscarPorId(idProducto);
             if(producto == null){
-                return "redirect:/producto/listar";    
+                return "redirect:producto/listar";    
             }
         }else{
-            return "redirect:/producto/listar";
+            return "redirect:producto/listar";
         }
 
         productoService.eliminar(idProducto);
         System.out.println("Registro eliminado con exito");
 
-        return "redirect:/producto/listar";
+        return "redirect:producto/listar";
     }
 }
