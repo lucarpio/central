@@ -130,6 +130,6 @@ public class ProductoController {
         productoService.eliminar(idProducto);
         System.out.println("Registro eliminado con exito");
 
-        return "producto/listar";
+        return "redirect:/producto/listar";
     }
 }
