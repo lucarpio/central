@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaf.org" 
+    th:replace="~{fragments/layout :: layout (~{::body},'ropa')}">
+
+<body>
+
+    <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2>Lista de productos (ROPA)</h2><br/>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Nombre</th>
+                  <th>Precio</th>
+                  <th>Marca</th>
+                  <th>Stock</th>
+                  <th>Descripción</th>
+                  <th>Puntuación</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr th:each="item : ${ropas}">
+                  <td th:text="${item.id}"></td>
+                  <td th:text="${item.nombre}"></td>
+                  <td th:text="${item.precio}"></td>
+                  <td th:text="${item.marca}"></td>
+                  <td th:text="${item.stock}"></td>
+                  <td th:text="${item.descripcion}"></td>
+                  <td th:text="${item.puntuacion}"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+    </div>
+
+</body>
+</html>

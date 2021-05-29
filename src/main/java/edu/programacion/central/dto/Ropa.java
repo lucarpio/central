@@ -12,10 +12,8 @@ public class Ropa {
     private int stock;
     private String descripcion;
     private float puntuacion;
-    private int tipoRopa;
-    private int tipoRopaId;
 
-    public Ropa(Integer id, String nombre, float precio, String marca, int stock, String descripcion, float puntuacion, int tipoRopa, int tipoRopaId) {
+    public Ropa(Integer id, String nombre, float precio, String marca, int stock, String descripcion, float puntuacion) {
         this.id = id;
         this.nombre = nombre;
         this.precio = precio;
@@ -23,8 +21,6 @@ public class Ropa {
         this.stock = stock;
         this.descripcion = descripcion;
         this.puntuacion = puntuacion;
-        this.tipoRopa = tipoRopa;
-        this.tipoRopaId = tipoRopaId;
     }
 
 
@@ -86,21 +82,4 @@ public class Ropa {
     public void setPuntuacion(float puntuacion) {
         this.puntuacion = puntuacion;
     }
-
-    public int getTipoRopa() {
-        return this.tipoRopa;
-    }
-
-    public void setTipoRopa(int tipoRopa) {
-        this.tipoRopa = tipoRopa;
-    }
-
-    public int getTipoRopaId() {
-        return this.tipoRopaId;
-    }
-
-    public void setTipoRopaId(int tipoRopaId) {
-        this.tipoRopaId = tipoRopaId;
-    }
-
 }

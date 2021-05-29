@@ -14,7 +14,7 @@ public class Customer {
     private String name;
     private String lastname;
     private String documentID;
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     private String birthdate;
     private String email;
     private String address;
