@@ -6,13 +6,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.*;
+// import lombok.*;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
+// @Getter
+// @Setter
+// @NoArgsConstructor
+// @AllArgsConstructor
+// @Builder
 @Entity
 @Table(name = "t_contact")
 public class Contact {
@@ -23,6 +23,20 @@ public class Contact {
 
     private String name;
     private String email;
+    private String phone;
+    private String reason;
+
+    public Contact() {
+    }
+
+    public Contact(Integer id, String name, String email, String phone, String reason) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+        this.reason = reason;
+    }
+
 
     public Integer getId() {
         return this.id;
@@ -56,6 +70,12 @@ public class Contact {
         this.phone = phone;
     }
 
-    private String phone;
+    public String getReason() {
+        return this.reason;
+    }
+
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
 
 }

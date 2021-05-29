@@ -5,15 +5,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 
 import edu.programacion.central.dto.Customer;
 import edu.programacion.central.service.CRMService;
 
-import org.springframework.validation.BindingResult;
+import javax.validation.Valid;
+
 
 @Controller
 public class CustomerController {
     
+
     private final CRMService crmService;
     private static final String CUSTOMER_CREATE = "customer/createcustomer";
     private static final String CUSTOMER_LIST ="customer/listCustomer"; 
