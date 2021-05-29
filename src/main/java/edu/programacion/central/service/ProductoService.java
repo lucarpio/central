@@ -2,7 +2,7 @@ package edu.programacion.central.service;
 
 import java.util.List;
 
-import edu.programacion.central.domain.Producto;
+import edu.programacion.central.model.Producto;
 
 public interface ProductoService {
     public List<Producto> listarTodos();

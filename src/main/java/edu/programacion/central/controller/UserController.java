@@ -1,4 +1,4 @@
-package edu.programacion.central.web;
+package edu.programacion.central.controller;
 
 //import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,10 +10,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import org.springframework.ui.Model;
 
+import edu.programacion.central.model.User;
 //import edu.programacion.central.domain.Persona;
 import edu.programacion.central.repository.UserRepository;
 import java.util.Optional;
-import edu.programacion.central.domain.User;
+
 //import edu.programacion.central.repository.IPersonaRepo;
 import javax.validation.Valid;
 import org.springframework.validation.BindingResult;

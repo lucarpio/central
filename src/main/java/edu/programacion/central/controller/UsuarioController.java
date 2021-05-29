@@ -1,12 +1,10 @@
-package edu.programacion.central.web;
+package edu.programacion.central.controller;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-//import javax.validation.Valid;
-
-import edu.programacion.central.domain.Usuario;
+import edu.programacion.central.model.Usuario;
 import edu.programacion.central.repository.UsuarioRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;

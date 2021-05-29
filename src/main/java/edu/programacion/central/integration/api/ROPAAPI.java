@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ROPAAPI {
-    @Value("${appexternal.endpoint.get.ropa}")
+    @Value("${apiropa.endpoint.get.ropa}")
     private String URL_GET_ROPA;
 
     private RestTemplate restTemplate;

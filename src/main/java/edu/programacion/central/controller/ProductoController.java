@@ -1,4 +1,4 @@
-package edu.programacion.central.web;
+package edu.programacion.central.controller;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import edu.programacion.central.domain.Producto;
+import edu.programacion.central.model.Producto;
 import edu.programacion.central.service.ProductoService;
 
 @Controller

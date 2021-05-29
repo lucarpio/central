@@ -1,4 +1,4 @@
-package edu.programacion.central.domain;
+package edu.programacion.central.model;
 
 import java.io.Serializable;
 

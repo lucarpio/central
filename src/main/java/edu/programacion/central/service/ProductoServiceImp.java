@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import edu.programacion.central.domain.Producto;
+import edu.programacion.central.model.Producto;
 import edu.programacion.central.repository.ProductoRepository;
 
 

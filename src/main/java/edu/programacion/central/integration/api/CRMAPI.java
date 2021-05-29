@@ -14,13 +14,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CRMAPI {
-    @Value("${appexternal.endpoint.get.customer}")
+    @Value("${apicrm.endpoint.get.customer}")
     private String URL_GET_CUSTOMER;
 
-    @Value("${appexternal.endpoint.post.customer}")
+    @Value("${apicrm.endpoint.post.customer}")
     private String URL_POST_CUSTOMER;
 
-    @Value("${appexternal.endpoint.get.complaint}")
+    @Value("${apicrm.endpoint.get.complaint}")
     private String URL_GET_COMPLAINT;
 
 

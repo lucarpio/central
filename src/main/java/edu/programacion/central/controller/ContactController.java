@@ -1,4 +1,4 @@
-package edu.programacion.central.web;
+package edu.programacion.central.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,9 +11,8 @@ import org.springframework.ui.Model;
 import javax.validation.Valid;
 import org.springframework.validation.BindingResult;
 
+import edu.programacion.central.model.Contact;
 import edu.programacion.central.repository.ContactRepository;
-
-import edu.programacion.central.domain.Contact;
 
 @Controller
 public class ContactController {

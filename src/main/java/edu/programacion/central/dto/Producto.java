@@ -1,6 +1,6 @@
-package edu.programacion.central.domain;
+package edu.programacion.central.dto;
 
-public class APIProducto {
+public class Producto {
     private Integer id;
     private String nombre;
     private String descripcion;
@@ -8,10 +8,10 @@ public class APIProducto {
     private String imagen;
     private Double precio;
 
-    public APIProducto() {
+    public Producto() {
     }
 
-    public APIProducto(Integer id, String nombre, String descripcion, String categoria, String imagen, Double precio) {
+    public Producto(Integer id, String nombre, String descripcion, String categoria, String imagen, Double precio) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -19,7 +19,7 @@ public class APIProducto {
         this.imagen = imagen;
         this.precio = precio;
     }
-    public APIProducto(String nombre, String descripcion, String categoria, String imagen, Double precio) {
+    public Producto(String nombre, String descripcion, String categoria, String imagen, Double precio) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.categoria = categoria;

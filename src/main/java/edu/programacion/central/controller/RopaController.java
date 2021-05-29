@@ -1,4 +1,4 @@
-package edu.programacion.central.web;
+package edu.programacion.central.controller;
 
 import java.util.List;
 
