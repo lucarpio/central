@@ -1,4 +1,5 @@
 package edu.programacion.central.web;
+import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -6,46 +7,48 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 
-import edu.programacion.central.domain.Customer;
-import edu.programacion.central.repository.CustomerRepository;
-import edu.programacion.central.repository.UserRepository;
+import edu.programacion.central.dto.Customer;
+import edu.programacion.central.service.CRMService;
 
 import javax.validation.Valid;
+
 
 @Controller
 public class CustomerController {
     
-       
-    private static final String INDEX ="customer/create"; 
-    private static String MODEL_CONTACT="client";
-    private final CustomerRepository clientsData;
-    private final UserRepository usuariosData;
 
-    public CustomerController(CustomerRepository clientsData,
-    UserRepository usuariosData    
-        ){
-        this.clientsData = clientsData;
-        this.usuariosData = usuariosData;
-    }      
+    private final CRMService crmService;
+    private static final String CUSTOMER_CREATE = "customer/createcustomer";
+    private static final String CUSTOMER_LIST ="customer/listCustomer"; 
+    private static String MODEL_CUSTOMER="customer";
 
-    @GetMapping("/customer/create")
+    public CustomerController(CRMService crmService) {
+        this.crmService = crmService;
+    }
+
+    @GetMapping(CUSTOMER_LIST)
     public String index(Model model) {
-        model.addAttribute(MODEL_CONTACT, new Customer());
-        return INDEX;
+        List<Customer> customers = crmService.getValidCustomers();
+        model.addAttribute("customers", customers);
+        return CUSTOMER_LIST;
+    }
+
+    @GetMapping(CUSTOMER_CREATE)
+    public String create(Model model) {
+        model.addAttribute(MODEL_CUSTOMER, new Customer());
+        return CUSTOMER_CREATE;
     }    
 
-    @PostMapping("/customer/create")
+    @PostMapping(CUSTOMER_CREATE)
     public String createSubmitForm(Model model, 
-        @Valid Customer objCliente, BindingResult result ){
+        Customer objCus, BindingResult result ){
         if(result.hasFieldErrors()) {
-            model.addAttribute("mensaje", "No se registro un cliente");
+            model.addAttribute("mensaje", "No se registro empleado");
         }else{
-            this.usuariosData.save(objCliente.getUser());
-            this.usuariosData.flush();
-            this.clientsData.save(objCliente);
-            model.addAttribute(MODEL_CONTACT, objCliente);
-            model.addAttribute("mensaje", "Se registro un cliente");
+            crmService.addValidCustomer(objCus);
+            model.addAttribute(MODEL_CUSTOMER, objCus);
+            model.addAttribute("mensaje", "Se registro empleado");
         }
-        return INDEX;
+        return CUSTOMER_CREATE;
     }
 }

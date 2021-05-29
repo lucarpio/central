@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaf.org" 
+    th:replace="~{fragments/layout :: layout (~{::body},'customer')}">
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+          <div class="col-sm-10 mt-5">
+            <div class="form-group row">
+              <h1>Cliente</h1>
+            </div>
+            <form th:object="${customer}" th:action="@{/customer/createcustomer}" method="post">
+              <div class="form-group row">
+                <div class="col-sm-2">
+                  <label for="name">Nombre</label>
+                </div>
+                <div class="col-sm-2">
+                  <input type="text" th:field="*{name}" />
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-2">
+                  <label for="lastname">Apellido</label>
+                </div>
+                <div class="col-sm-2">
+                  <input type="text" th:field="*{lastname}" />
+                </div>
+              </div>           
+              
+              <div class="form-group row">
+                <div class="col-sm-2">
+                  <label for="documentID">Número de indentidad</label>
+                </div>
+                <div class="col-sm-2">
+                  <input type="text" th:field="*{documentID}" />
+                </div>
+              </div>     
+
+              <div class="form-group row">
+                <div class="col-sm-2">
+                  <label for="birthdate">Cumpleaños</label>
+                </div>
+                <div class="col-sm-2">
+                  <input type="datetime" th:field="*{birthdate}" />
+                </div>
+              </div>  
+
+              <div class="form-group row">
+                <div class="col-sm-2">
+                  <label for="email">Correo Electrónico</label>
+                </div>
+                <div class="col-sm-2">
+                  <input type="text" th:field="*{email}" />
+                </div>
+              </div>  
+
+              <div class="form-group row">
+                <div class="col-sm-2">
+                  <label for="address">Dirección</label>
+                </div>
+                <div class="col-sm-2">
+                  <input type="text" th:field="*{address}" />
+                </div>
+              </div>  
+
+
+
+              <div class="form-group row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-2">
+                  <button th:with="text='Registrar'" class="btn btn-primary" type="submit" th:text="${text}"/>
+                </div>
+              </div>
+            </form>
+            <p th:text="${mensaje}" />
+          </div>
+        </div>
+      </div>
+
+      <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+      <script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>
+      <script th:src="@{/webjars/bootstrap-datepicker/js/bootstrap-datepicker.min.js}"></script>
+      <script th:src="@{/webjars/jquery.inputmask/jquery.inputmask.min.js}"></script>    
+
+      <script>
+        $('.input-group.date').datepicker({
+          autoclose: true,
+          todayHighlight: true
+        });
+      </script>
+      <script>
+        $(":input").inputmask();
+      </script>
+</body>
+
+</html> 

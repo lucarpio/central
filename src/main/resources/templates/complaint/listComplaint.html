@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaf.org" 
+    th:replace="~{fragments/layout :: layout (~{::body},'complaint')}">
+
+<body>
+
+    <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2>Listado de Quejas</h2><br/>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>id</th>
+                  <th>Asunto</th>
+                  <th>Fecha</th>
+                  <th>Explicación</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr th:each="item : ${complaints}">
+                <td>
+                    #
+                </td>
+                  <td th:text="${item.subject}"></td>
+                  <td th:text="${item.date}"></td>
+                  <td th:text="${item.explanation}"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+    </div>
+
+</body>
+</html>
