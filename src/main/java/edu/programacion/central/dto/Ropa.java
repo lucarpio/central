@@ -5,15 +5,15 @@ import javax.persistence.JoinColumn;
 import lombok.*;
 @Builder
 public class Ropa {
-    private Integer id;
+    private int id;
     private String nombre;
-    private float precio;
+    private double precio;
     private String marca;
     private int stock;
     private String descripcion;
-    private float puntuacion;
+    private double puntuacion;
 
-    public Ropa(Integer id, String nombre, float precio, String marca, int stock, String descripcion, float puntuacion) {
+    public Ropa(int id, String nombre, double precio, String marca, int stock, String descripcion, double puntuacion) {
         this.id = id;
         this.nombre = nombre;
         this.precio = precio;
@@ -27,11 +27,11 @@ public class Ropa {
     public Ropa() {
     }
 
-    public Integer getId() {
+    public int getId() {
         return this.id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -43,11 +43,11 @@ public class Ropa {
         this.nombre = nombre;
     }
 
-    public float getPrecio() {
+    public double getPrecio() {
         return this.precio;
     }
 
-    public void setPrecio(float precio) {
+    public void setPrecio(double precio) {
         this.precio = precio;
     }
 
@@ -75,11 +75,11 @@ public class Ropa {
         this.descripcion = descripcion;
     }
 
-    public float getPuntuacion() {
+    public double getPuntuacion() {
         return this.puntuacion;
     }
 
-    public void setPuntuacion(float puntuacion) {
+    public void setPuntuacion(double puntuacion) {
         this.puntuacion = puntuacion;
     }
 }
