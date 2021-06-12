@@ -14,7 +14,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
 
-import edu.programacion.central.dto.Producto;
+import edu.programacion.central.dto.Computo;
 
 import org.springframework.stereotype.Service;
 
@@ -35,31 +35,26 @@ public class ComputoAPI {
 
     static RestTemplate restTemplate = new RestTemplate();
 
-    public ComputoAPI(RestTemplate restTemplate){
+    public ComputoAPI(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
 
-    public List<Producto> getProductos(){
-        ResponseEntity<List<Producto>> response = restTemplate.
-                                    exchange(URL_GET,
-                                    HttpMethod.GET,
-                                    HttpEntity.EMPTY,
-                                    new ParameterizedTypeReference<List<Producto>>(){});
+    public List<Computo> getComputos() {
+        ResponseEntity<List<Computo>> response = restTemplate.exchange(URL_GET, HttpMethod.GET, HttpEntity.EMPTY,
+                new ParameterizedTypeReference<List<Computo>>() {
+                });
         return response.getBody();
     }
 
-    public Producto getProducto(int id){
+    public Computo getComputo(int id) {
         Map<String, Integer> param = new HashMap<>();
         param.put("id", id);
-        return restTemplate.getForObject(URL_GET, Producto.class, param);
+        return restTemplate.getForObject(URL_GET, Computo.class, param);
     }
 
-
-    public void createProducto(Producto p){
-        ResponseEntity<Producto> prod2 = 
-            restTemplate.postForEntity(URL_POST, p, Producto.class);
+    public void createComputo(Computo p) {
+        // ResponseEntity<Computo> prod2 = 
+        restTemplate.postForEntity(URL_POST, p, Computo.class);
     }
-
-  
 
 }
