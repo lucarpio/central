@@ -1,6 +1,6 @@
 package edu.programacion.central.dto;
 
-public class Producto {
+public class Computo {
     private Integer id;
     private String nombre;
     private String descripcion;
@@ -8,10 +8,10 @@ public class Producto {
     private String imagen;
     private Double precio;
 
-    public Producto() {
+    public Computo() {
     }
 
-    public Producto(Integer id, String nombre, String descripcion, String categoria, String imagen, Double precio) {
+    public Computo(Integer id, String nombre, String descripcion, String categoria, String imagen, Double precio) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -19,7 +19,7 @@ public class Producto {
         this.imagen = imagen;
         this.precio = precio;
     }
-    public Producto(String nombre, String descripcion, String categoria, String imagen, Double precio) {
+    public Computo(String nombre, String descripcion, String categoria, String imagen, Double precio) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.categoria = categoria;
