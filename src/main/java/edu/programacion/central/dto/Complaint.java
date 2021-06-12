@@ -1,8 +1,9 @@
 package edu.programacion.central.dto;
 
 
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+
+import java.time.ZonedDateTime;
+
 
 import lombok.*;
 
@@ -13,14 +14,13 @@ public class Complaint {
     private Integer id;
     private String subject;
     private String explanation;
-    @Temporal(TemporalType.TIMESTAMP)
-    private String date;
+    private ZonedDateTime date;
 
 
     public Complaint() {
     }
 
-    public Complaint(Integer id, String subject, String explanation, String date) {
+    public Complaint(Integer id, String subject, String explanation, ZonedDateTime date) {
         this.id = id;
         this.subject = subject;
         this.explanation = explanation;
@@ -51,11 +51,11 @@ public class Complaint {
         this.explanation = explanation;
     }
 
-    public String getDate() {
+    public ZonedDateTime getDate() {
         return this.date;
     }
 
-    public void setDate(String date) {
+    public void setDate(ZonedDateTime date) {
         this.date = date;
     }
 

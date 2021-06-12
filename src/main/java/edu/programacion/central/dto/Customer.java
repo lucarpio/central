@@ -1,6 +1,8 @@
 package edu.programacion.central.dto;
 
 
+import java.sql.Date;
+
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -14,13 +16,12 @@ public class Customer {
     private String name;
     private String lastname;
     private String documentID;
-    @Temporal(TemporalType.TIMESTAMP)
-    private String birthdate;
+    private Date birthdate;
     private String email;
     private String address;
     
 
-    public Customer(Integer id, String name, String lastname, String documentID, String birthdate, String email, String address) {
+    public Customer(Integer id, String name, String lastname, String documentID, Date birthdate, String email, String address) {
         this.id = id;
         this.name = name;
         this.lastname = lastname;
@@ -66,11 +67,11 @@ public class Customer {
         this.documentID = documentID;
     }
 
-    public String getBirthdate() {
+    public Date getBirthdate() {
         return this.birthdate;
     }
 
-    public void setBirthdate(String birthdate) {
+    public void setBirthdate(Date birthdate) {
         this.birthdate = birthdate;
     }
 

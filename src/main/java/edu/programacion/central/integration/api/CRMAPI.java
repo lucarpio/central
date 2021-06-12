@@ -23,6 +23,9 @@ public class CRMAPI {
     @Value("${apicrm.endpoint.get.complaint}")
     private String URL_GET_COMPLAINT;
 
+    @Value("${apicrm.endpoint.post.complaint}")
+    private String URL_POST_COMPLAINT;
+
 
     private RestTemplate restTemplate;
 
@@ -49,10 +52,20 @@ public class CRMAPI {
     }
 
 
-    public void postCustomers(Customer e){
-        HttpEntity<Customer> bodyRequest = new  HttpEntity<Customer>(e);
+    public void postCustomers(Customer c){
+        HttpEntity<Customer> bodyRequest = new  HttpEntity<Customer>(c);
         ResponseEntity<String> response = 
             restTemplate.exchange(URL_POST_CUSTOMER, 
+                        HttpMethod.POST,bodyRequest,
+                        new ParameterizedTypeReference<String>(){
+                }
+            );
+    }
+
+    public void postComplaints(Complaint co){
+        HttpEntity<Complaint> bodyRequest = new HttpEntity<Complaint>(co);
+        ResponseEntity<String> response = 
+            restTemplate.exchange(URL_POST_COMPLAINT, 
                         HttpMethod.POST,bodyRequest,
                         new ParameterizedTypeReference<String>(){
                 }

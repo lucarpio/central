@@ -28,11 +28,15 @@ public class CRMService {
         return complaintsValid;
     }
 
-    
-    public void addValidCustomer(Customer e){
-        if(!e.getName().equals("A")){
-            crmAPI.postCustomers(e);
-        }
+    public void addValidCustomer(Customer c){
+        crmAPI.postCustomers(c);
+        // if(!e.getName().equals("A")){
+        // }
     }
     
+    public void addComplaint(Complaint co){
+        crmAPI.postComplaints(co);
+        // if(!e.getName().equals("A")){
+        // }
+    }
 }

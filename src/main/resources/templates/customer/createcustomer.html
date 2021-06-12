@@ -44,7 +44,7 @@
                   <label for="birthdate">Cumpleaños</label>
                 </div>
                 <div class="col-sm-2">
-                  <input type="datetime" th:field="*{birthdate}" />
+                  <input type="date" th:field="*{birthdate}" />
                 </div>
               </div>  
 
@@ -71,7 +71,8 @@
               <div class="form-group row">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-2">
-                  <button th:with="text='Registrar'" class="btn btn-primary" type="submit" th:text="${text}"/>
+                  <button th:with="text='Registrar'" class="btn btn-primary" type="submit" 
+                    th:text="${text}"/>
                 </div>
               </div>
             </form>
