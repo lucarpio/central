@@ -5,8 +5,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+// import javax.persistence.Temporal;
+// import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.OneToOne;
 import javax.persistence.JoinColumn;
 
@@ -21,7 +24,7 @@ import java.util.Date;
 // @Builder
 @Entity
 @Table(name = "t_customer")
-public class Customer {
+public class Cliente {
 
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,34 +33,29 @@ public class Customer {
     private String firstName;
     private String lastName;
     private String documentID;
-    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date birthDate;
-    private String gender;
     private String address;
     private String email;
-    private String maritalStatus;  
     private String phone;
-
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;   
 
 
-    public Customer(Integer id, String firstName, String lastName, String documentID, Date birthDate, String gender, String address, String email, String maritalStatus, String phone, User user) {
+    public Cliente(Integer id, String firstName, String lastName, String documentID, Date birthDate, String address, String email, String phone, User user) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.documentID = documentID;
         this.birthDate = birthDate;
-        this.gender = gender;
         this.address = address;
         this.email = email;
-        this.maritalStatus = maritalStatus;
         this.phone = phone;
         this.user = user;
     }
 
-    public Customer() {
+    public Cliente() {
     }
 
     public Integer getId() {
@@ -100,14 +98,6 @@ public class Customer {
         this.birthDate = birthDate;
     }
 
-    public String getGender() {
-        return this.gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
     public String getAddress() {
         return this.address;
     }
@@ -122,14 +112,6 @@ public class Customer {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getMaritalStatus() {
-        return this.maritalStatus;
-    }
-
-    public void setMaritalStatus(String maritalStatus) {
-        this.maritalStatus = maritalStatus;
     }
 
     public String getPhone() {
