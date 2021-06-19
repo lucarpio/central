@@ -9,10 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 
 import edu.programacion.central.dto.Computo;
-import edu.programacion.central.service.CRMService;
 import edu.programacion.central.integration.api.ComputoAPI;
-
-import javax.validation.Valid;
 
 @Controller
 public class ComputoController {
