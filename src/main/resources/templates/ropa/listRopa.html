@@ -19,6 +19,7 @@
                   <th>Stock</th>
                   <th>Descripción</th>
                   <th>Puntuación</th>
+                  <th>Tipo de Ropa</th>
                 </tr>
               </thead>
               <tbody>
@@ -30,10 +31,10 @@
                   <td th:text="${item.stock}"></td>
                   <td th:text="${item.descripcion}"></td>
                   <td th:text="${item.puntuacion}"></td>
-                  
-                  <!--                   
-                  <a th:href="@{'/catalogo/add/__${producto.id}__'}" 
-                      class="btn btn-primary" role="button">Add</a> -->
+                  <td th:text="${item.tipoRopa.nombre}"></td>                 
+                  <td><a class="btn btn-primary" role="button">Add</a></td> 
+                  <!-- <a th:href="@{'/catalogo/add/__${producto.id}__'}" 
+                      class="btn btn-primary" role="button">Add</a>  -->
                 </tr>
               </tbody>
             </table>

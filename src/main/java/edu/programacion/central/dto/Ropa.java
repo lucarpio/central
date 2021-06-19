@@ -3,6 +3,7 @@ package edu.programacion.central.dto;
 import javax.persistence.JoinColumn;
 
 import lombok.*;
+
 @Builder
 public class Ropa {
     private int id;
@@ -12,8 +13,10 @@ public class Ropa {
     private int stock;
     private String descripcion;
     private double puntuacion;
+    private TipoRopa tipoRopa;
 
-    public Ropa(int id, String nombre, double precio, String marca, int stock, String descripcion, double puntuacion) {
+    public Ropa(int id, String nombre, double precio, String marca, int stock, String descripcion, double puntuacion,
+            TipoRopa tipoRopa) {
         this.id = id;
         this.nombre = nombre;
         this.precio = precio;
@@ -21,8 +24,16 @@ public class Ropa {
         this.stock = stock;
         this.descripcion = descripcion;
         this.puntuacion = puntuacion;
+        this.tipoRopa = tipoRopa;
     }
 
+    public TipoRopa getTipoRopa() {
+        return this.tipoRopa;
+    }
+
+    public void setTipoRopa(TipoRopa tipoRopa) {
+        this.tipoRopa = tipoRopa;
+    }
 
     public Ropa() {
     }

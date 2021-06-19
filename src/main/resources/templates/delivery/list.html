@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'delivery')}">
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2>Delivery</h2><br/>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>cat</th>
+              <th>costo de envio</th>
+              <th>destino</th>
+              <th>estado</th>
+              <th>fecha final</th>
+              <th>fecha inicial</th>
+              <th>fragil</th>
+              <th>id_tracking</th>
+              <th>origen</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="item : ${delivery}">
+              <td th:text="${item.cat}"></td>
+              <td th:text="${item.costoenvio}"></td>
+              <td th:text="${item.destino}"></td>
+              <td th:text="${item.estado}"></td>
+              <td th:text="${item.fecha_fin}"></td>
+              <td th:text="${item.fecha_ini}"></td>
+              <td th:text="${item.fragil}"></td>
+              <td th:text="${item.id_tracking}"></td>
+              <td th:text="${item.origen}"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+</div>
+
+
+ </body>
+
+</html>
