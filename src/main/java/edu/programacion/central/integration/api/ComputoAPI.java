@@ -50,8 +50,10 @@ public class ComputoAPI {
     }
 
     public void createComputo(Computo p) {
-        // ResponseEntity<Computo> prod2 = 
-        restTemplate.postForEntity(URL_POST, p, Computo.class);
+        HttpEntity<Computo> bodyRequest = new HttpEntity<Computo>(p);
+        ResponseEntity<String> response = restTemplate.exchange(URL_POST, HttpMethod.POST, bodyRequest,
+                new ParameterizedTypeReference<String>() {
+                });
     }
 
 }
