@@ -1,14 +1,11 @@
 package edu.programacion.central.integration.api;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.beans.factory.annotation.Value;
@@ -36,7 +33,7 @@ public class ComputoAPI {
     static RestTemplate restTemplate = new RestTemplate();
 
     public ComputoAPI(RestTemplate restTemplate) {
-        this.restTemplate = restTemplate;
+        ComputoAPI.restTemplate = restTemplate;
     }
 
     public List<Computo> getComputos() {
