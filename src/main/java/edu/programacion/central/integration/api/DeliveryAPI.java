@@ -9,11 +9,12 @@ import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import edu.programacion.central.dto.Delivery;
 import edu.programacion.central.dto.Pedido;
-
+@Service
 public class DeliveryAPI {
     // private String URL_GET_CATEGORIA;
     // private String URL_GET_CATEGORIA_BYID;
@@ -30,15 +31,15 @@ public class DeliveryAPI {
     private String URL_PUT_DELIVERY;
     @Value("${apidelivery.endpoint.delivery.delete}")
     private String URL_DELETE_DELIVERY;
-    @Value("${apidelivery.endpoint.get}")
+    @Value("${apidelivery.endpoint.pedido.get}")
     private String URL_GET_PEDIDO;
-    @Value("${apidelivery.endpoint.get}")
+    @Value("${apidelivery.endpoint.pedido.get}")
     private String URL_GET_PEDIDO_BYID;
-    @Value("${apidelivery.endpoint.create}")
+    @Value("${apidelivery.endpoint.pedido.create}")
     private String URL_POST_PEDIDO;
-    @Value("${apidelivery.endpoint.put}")
+    @Value("${apidelivery.endpoint.pedido.put}")
     private String URL_PUT_PEDIDO;
-    @Value("${apidelivery.endpoint.delete}")
+    @Value("${apidelivery.endpoint.pedido.delete}")
     private String URL_DELETE_PEDIDO;
 
     static RestTemplate restTemplate = new RestTemplate();
@@ -78,7 +79,7 @@ public class DeliveryAPI {
     }
 
     public List<Pedido> getPedido() {
-        ResponseEntity<List<Pedido>> response = restTemplate.exchange(URL_GET_DELIVERY, HttpMethod.GET, HttpEntity.EMPTY,
+        ResponseEntity<List<Pedido>> response = restTemplate.exchange(URL_GET_PEDIDO, HttpMethod.GET, HttpEntity.EMPTY,
                 new ParameterizedTypeReference<List<Pedido>>() {
                 });
         return response.getBody();
@@ -87,12 +88,12 @@ public class DeliveryAPI {
     public Pedido getPedido(int id) {
         Map<String, Integer> param = new HashMap<>();
         param.put("id", id);
-        return restTemplate.getForObject(URL_GET_DELIVERY_BYID, Pedido.class, param);
+        return restTemplate.getForObject(URL_GET_PEDIDO_BYID, Pedido.class, param);
     }
 
     public void createPedido(Pedido pedido) {
         HttpEntity<Pedido> bodyRequest = new HttpEntity<Pedido>(pedido);
-        ResponseEntity<String> response = restTemplate.exchange(URL_POST_DELIVERY, HttpMethod.POST, bodyRequest,
+        ResponseEntity<String> response = restTemplate.exchange(URL_POST_PEDIDO, HttpMethod.POST, bodyRequest,
                 new ParameterizedTypeReference<String>() {
                 });
     }

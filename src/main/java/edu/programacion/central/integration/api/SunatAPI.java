@@ -1,4 +1,4 @@
-package edu.programacion.central.integration;
+package edu.programacion.central.integration.api;
 
 import java.util.HashMap;
 import java.util.List;
@@ -9,10 +9,11 @@ import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import edu.programacion.central.dto.Factura;
-
+@Service
 public class SunatAPI {
     @Value("${apisunat.endpoint.factura.get}")
     private String URL_GET_FACTURA;

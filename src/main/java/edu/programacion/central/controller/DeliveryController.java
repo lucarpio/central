@@ -2,6 +2,7 @@ package edu.programacion.central.controller;
 
 import java.util.List;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import edu.programacion.central.dto.Delivery;
 import edu.programacion.central.dto.Pedido;
 import edu.programacion.central.integration.api.DeliveryAPI;
-
+@Controller
 public class DeliveryController {
     private final DeliveryAPI deliveryAPI;
     private static final String DELIVERY_LIST = "delivery/list";
@@ -55,7 +56,7 @@ public class DeliveryController {
     @PostMapping(DELIVERY_CREATE)
     public String create_delivery(Model model, Delivery objDelivery, BindingResult result) {
         deliveryAPI.createDelivery(objDelivery);
-        model.addAttribute("Delivery", objDelivery);
+        model.addAttribute("delivery", objDelivery);
         model.addAttribute("mensaje", "Se registro con éxito");
         return DELIVERY_CREATE;
     }
@@ -89,7 +90,7 @@ public class DeliveryController {
     @PostMapping(PEDIDO_CREATE)
     public String create_pedido(Model model, Pedido objPedido, BindingResult result) {
         deliveryAPI.createPedido(objPedido);
-        model.addAttribute("Pedido", objPedido);
+        model.addAttribute("pedido", objPedido);
         model.addAttribute("mensaje", "Se registro con éxito");
         return PEDIDO_CREATE;
     }
