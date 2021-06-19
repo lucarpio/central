@@ -9,13 +9,9 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 
 import edu.programacion.central.dto.Card;
-import edu.programacion.central.dto.Computo;
 import edu.programacion.central.dto.Payment;
 import edu.programacion.central.dto.RegisterCard;
 import edu.programacion.central.integration.api.PaymentAPI;
-
-import javax.validation.Valid;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class PaymentController {

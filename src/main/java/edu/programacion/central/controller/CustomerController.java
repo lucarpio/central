@@ -1,4 +1,5 @@
 package edu.programacion.central.controller;
+
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -10,17 +11,13 @@ import org.springframework.validation.BindingResult;
 import edu.programacion.central.dto.Customer;
 import edu.programacion.central.service.CRMService;
 
-import javax.validation.Valid;
-
-
 @Controller
 public class CustomerController {
-    
 
     private final CRMService crmService;
     private static final String CUSTOMER_CREATE = "customer/createcustomer";
-    private static final String CUSTOMER_LIST ="customer/listCustomer"; 
-    private static String MODEL_CUSTOMER="customer";
+    private static final String CUSTOMER_LIST = "customer/listCustomer";
+    private static String MODEL_CUSTOMER = "customer";
 
     public CustomerController(CRMService crmService) {
         this.crmService = crmService;
@@ -37,14 +34,13 @@ public class CustomerController {
     public String create(Model model) {
         model.addAttribute(MODEL_CUSTOMER, new Customer());
         return CUSTOMER_CREATE;
-    }    
+    }
 
     @PostMapping(CUSTOMER_CREATE)
-    public String createSubmitForm(Model model, 
-        Customer objCus, BindingResult result ){
-        if(result.hasFieldErrors()) {
+    public String createSubmitForm(Model model, Customer objCus, BindingResult result) {
+        if (result.hasFieldErrors()) {
             model.addAttribute("mensaje", "No se registro empleado");
-        }else{
+        } else {
             crmService.addValidCustomer(objCus);
             model.addAttribute(MODEL_CUSTOMER, objCus);
             model.addAttribute("mensaje", "Se registro empleado");

@@ -82,7 +82,7 @@ public class DeliveryController {
 
     @GetMapping(PEDIDO_CREATE)
     public String create_pedido(Model model) {
-        model.addAttribute(MODEL_DELIVERY, new Pedido());
+        model.addAttribute(MODEL_PEDIDO, new Pedido());
         return PEDIDO_CREATE;
     }
 

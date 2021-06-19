@@ -4,19 +4,13 @@ package edu.programacion.central.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-
-
 // import org.springframework.web.bind.annotation.PostMapping;
 // import org.springframework.web.bind.annotation.RequestParam;
 // import org.springframework.web.servlet.ModelAndView;
 import org.springframework.ui.Model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Controller
 public class ProductController {
-
 
     @GetMapping(path = { "/poloQuick001" })
     public String mostrar1(Model model) {
